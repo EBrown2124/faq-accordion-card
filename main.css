@@ -12,11 +12,12 @@ body{
   background: linear-gradient(hsl(273, 75%, 66%),hsl(240, 73%, 65%));
   background-repeat: no-repeat;
   margin: 0;
-  height: 955px;
+  height: 945px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Kumbh Sans', sans-serif;
+  flex-direction: column;
 }
 
 .main {
@@ -30,14 +31,11 @@ body{
   width: 900px ;
   height: 530px;
   border-radius: 35px;
-
 }
 
-ul{
-  list-style:none;
-  padding: 0;
+.lady{
+  display: none;
 }
-
 
 .art{
   position: relative;
@@ -80,10 +78,6 @@ ul{
   overflow: hidden;
 }
 
-.answer p {
-
-}
-
 .contentBox.active .answer{
   max-height: 300px;
   animation: fade 1s ease-in-out;
@@ -105,5 +99,48 @@ img {
   to{
     opacity: 1;
     transform: translateY(0px);
+  }
+}
+
+@media (max-width: 900px)  {
+  .main{
+    flex-direction: column;
+    width: 430px ;
+    height: 520px;
+    background-size: 70%;
+    background-image: url(./images/bg-pattern-mobile.svg);
+    background-position:  50% 0;
+  }
+
+  .art{
+    position: relative;
+    top: -26%;
+    left: 0;
+    height: 11px;
+    width: 70%;
+    align-self: center;
+
+  }
+
+  .lady{
+    display: block;
+  }
+
+  .box{
+    display: none;
+  }
+
+  .faq{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    left: 0;
+    top: 0;
+    padding-top: 120px;
+  }
+
+  .faq h1 {
+    font-size: 25px;
   }
 }
